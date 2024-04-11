@@ -17,27 +17,6 @@ interface  DataType{
   id:string
 }
 
-const dataSource = [
-  {
-    title: "Học",
-    content: "Làm bài tập môn Cấu trúc dữ liệu và giải thuật",
-    date: "2024/09/01",
-    status: "resolve"
-  },
-  {
-    title: "Nhà",
-    content: "Nấu cơm",
-    date: "2024/09/01",
-    status: "resolve"
-  },
-  {
-    title: "Học",
-    content: "Làm bài tập môn Lập trình âm thanh",
-    date: "2024/09/01",
-    status: "resolve"
-  },
-]
-
 
 function App() {
   const [isOpen , setIsOpen] = useState(false)
@@ -73,8 +52,10 @@ function App() {
       setData(newData)
       message.success("Sửa task thành công!")
     } else {
-      localStorage.setItem("data", JSON.stringify([...data,{...values, id: new Date()} ]))
-      setData([...data, values])
+      const id = moment().format('YYYYMMDDHHmmss');
+      const newValue = {...values, id: id }
+      localStorage.setItem("data", JSON.stringify([...data, newValue]))
+      setData([...data, newValue])
     }
     form.resetFields()
   };
