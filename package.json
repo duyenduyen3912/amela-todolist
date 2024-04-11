@@ -10,6 +10,8 @@
     "@types/node": "^16.18.96",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
+    "antd": "^5.16.1",
+    "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
